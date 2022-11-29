@@ -4,14 +4,14 @@ import Poster from '../Poster/Poster.component';
 
 const PosterSlider = (props) => {
 
-    const { posters, title, subtitle, isDark } = props;
+    const { posters, title, subtitle, isDark, config } = props;
 
     const settings = {
         infinite: false,
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 4,
-        reponsive: [
+        responsive: [
             {
                 breakpoint: 1024,
                 settings: {
@@ -48,9 +48,7 @@ const PosterSlider = (props) => {
             </div>
             <Slider {...settings}>
                 {
-                    posters.map((each, index) => (
-                        <Poster {...each} isDark={isDark} key={index} />
-                    ))
+                    posters.map((each, index) => <Poster {...each} isDark={isDark} key={index} />)
                 }
             </Slider>
         </>
