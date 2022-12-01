@@ -7,6 +7,7 @@ import Slider from 'react-slick';
 import { FaCcVisa, FaCcApplePay } from 'react-icons/fa';
 import PosterSlider from '../components/PosterSlider/PosterSlider.component';
 import MovieHero from '../components/MovieHero/MovieHero.component';
+import Cast from '../components/Cast/Cast.component';
 
 const MoviePage = () => {
 
@@ -54,7 +55,36 @@ const MoviePage = () => {
         requestMovie();
     }, [id]);
 
-    const settingsCast = {};
+    const settingsCast = {
+        infinite: false,
+        speed: 500,
+        slidesToShow: 6,
+        slidesToScroll: 4,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 3,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 4,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
+                },
+            },
+        ]
+    };
 
     const settings = {
         infinite: false,
@@ -82,7 +112,6 @@ const MoviePage = () => {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-
                 },
             },
         ]
@@ -126,6 +155,16 @@ const MoviePage = () => {
                 </div>
 
                 {/* Cast Slider */}
+                <div className='my-8'>
+                    <h2 className='text-gray-800 font-bold text-2xl mb-4'>Cast and Crew</h2>
+                    <Slider {...settingsCast}>
+                        {
+                            cast.map((castData) => {
+                                return (<Cast image={castData.profile_path} castName={castData.original_name} role={castData.character} />)
+                            })
+                        }
+                    </Slider>
+                </div>
 
                 <div className='my-8'>
                     <hr />
