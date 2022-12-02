@@ -1,70 +1,72 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Book My Show clone
 
-## Available Scripts
+This project is the frontend of website Book My Show created using React.js, 
+APIs are also used for importing movies from the 'tmdb' database.
 
-In the project directory, you can run:
+## API Reference
 
-### `npm start`
+#### Get all items
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```http
+  /movie/${id}
+```
 
-### `npm test`
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. It returns the moviepage|
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Pages
+Contains the 3 pages : 
+HomePage, MoviePage and PlayPage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Layout
 
-### `npm run eject`
+Two layouts are created. 
+(1) Default layout for HomePage and PlayPage
+(2) Movie layout for MoviePage
+## Context
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Created movie context using ContextAPI to get access to movies anywhere in the whole application
+##  Components
+### Navbar
+Created two Navbar components. 
+(1) Navbar for HomePage and PlayPage.
+(2) MovieNavbar for MoviePage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Hero Carousel
+Created the sliding carousel for the Hero Section.
+Here, the movies are provided by 'tmdb'.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Poster
+Created the Poster of Movies which we got from 'tmdb'.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Poster Slider
+Created the Poster slider to slide and map throug each movie 
+we got from the 'tmdb' database.
 
-## Learn More
+### Movie Hero 
+Created the Hero Section of '/movie/:id' page showing the movie Image
+along with some of the Info
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Cast
+Created Cast component to show the cast of the movie in a format
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Entertainment 
+Created Entertainment Card Slider to show different fun activities.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Payment Model 
+We used headless@UI to create the payment modal and used razorpay API for the transaction
 
-### Analyzing the Bundle Size
+### Play Filter
+We used headless@UI to create filter section for the PlayPage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Authors
 
-### Making a Progressive Web App
+- [@iam-arpitjain](https://github.com/iam-arpitjain)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
