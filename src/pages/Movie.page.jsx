@@ -53,6 +53,7 @@ const MoviePage = () => {
         };
 
         requestMovie();
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
 
     const settingsCast = {
@@ -180,7 +181,7 @@ const MoviePage = () => {
                 </div>
 
                 {/* recommended movies slider  */}
-                <PosterSlider config={settings} title='BMS Xclusive' posters={recommendedMovies} isDark={false} />
+                <PosterSlider config={settings} title='BMS Xclusive' posters={similarMovies} isDark={false} />
 
             </div>
         </>

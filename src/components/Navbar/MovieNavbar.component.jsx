@@ -20,7 +20,7 @@ const NavSm = () => {
 };
 
 const NavLg = () => {
-    const { movie } = useContext(MovieContext);
+    // const { movie } = useContext(MovieContext);
 
     return (
         <>
